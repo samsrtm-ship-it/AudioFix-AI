@@ -62,9 +62,21 @@ def _confidence_badge(label: str, score: float) -> str:
 # ---------------------------------------------------------------------------
 st.markdown(
     """
-    <div style="background:#1a1a2e;padding:22px 28px 18px;border-radius:8px;margin-bottom:8px;">
-        <h1 style="color:#e0e0ff;margin:0;font-size:2rem;">🎙️ AudioFix AI</h1>
-        <p style="color:#a0a0cc;margin:4px 0 0;font-size:1.05rem;">
+    <div style="background:#1a1a2e;padding:22px 28px 20px;border-radius:8px;margin-bottom:8px;">
+        <div style="display:flex;align-items:baseline;gap:14px;flex-wrap:wrap;">
+            <span style="color:#e0e0ff;font-size:2.1rem;font-weight:800;
+                         letter-spacing:2px;line-height:1.1;">
+                🎙️ AUDIO FIX AI
+            </span>
+            <span style="color:#c8b8ff;font-size:1.15rem;
+                         font-family:'Segoe Script','Brush Script MT','Comic Sans MS',
+                         'Dancing Script',cursive;
+                         font-style:italic;font-weight:400;line-height:1.1;">
+                by Sams Audio Garage
+            </span>
+        </div>
+        <p style="color:#a0a0cc;margin:8px 0 0;font-size:1.0rem;
+                  text-align:left;letter-spacing:0.5px;">
             Audio Equipment Troubleshooting Assistant
         </p>
     </div>
@@ -320,10 +332,20 @@ if diagnose_clicked:
 # ---------------------------------------------------------------------------
 st.divider()
 st.markdown(
-    "<p style='text-align:center;color:#888;font-size:0.82rem;'>"
-    "AudioFix AI &nbsp;|&nbsp; Educational AI Project &nbsp;|&nbsp; "
-    "This tool provides preliminary diagnosis guidance only and does not replace "
-    "a qualified audio technician."
-    "</p>",
+    """
+    <div style="text-align:center;padding:10px 0 6px;">
+        <p style="color:#a0a0cc;font-size:0.88rem;margin:0;font-weight:600;
+                  letter-spacing:1px;">
+            &copy; 2026 SAMS AUDIO GARAGE
+        </p>
+        <p style="color:#666;font-size:0.78rem;margin:4px 0 0;">
+            AudioFix AI &mdash; Audio Equipment Troubleshooting Assistant
+        </p>
+        <p style="color:#555;font-size:0.74rem;margin:4px 0 0;">
+            This tool provides preliminary diagnosis guidance only and does not
+            replace a qualified audio technician.
+        </p>
+    </div>
+    """,
     unsafe_allow_html=True,
 )

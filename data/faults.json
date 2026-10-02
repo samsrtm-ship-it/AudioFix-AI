@@ -1,0 +1,194 @@
+[
+  {
+    "fault_id": "F001",
+    "fault_name": "Microphone Not Working",
+    "equipment": ["microphone"],
+    "primary_symptoms": ["no_sound"],
+    "secondary_symptoms": [],
+    "severity": "High",
+    "possible_causes": [
+      "Microphone cable not connected or faulty",
+      "Phantom power (+48V) not enabled for condenser microphone",
+      "Mute button engaged on mixer channel",
+      "Gain/trim set to zero on mixer channel",
+      "Faulty XLR connector"
+    ],
+    "troubleshooting_steps": [
+      "Check that the XLR cable is firmly connected at both the microphone and mixer ends",
+      "If using a condenser microphone, verify that phantom power (+48V) is enabled on the mixer channel",
+      "Check that the mute button on the mixer channel is not engaged",
+      "Turn up the gain/trim control on the mixer channel to an appropriate level",
+      "Test with a known-working cable to rule out a cable fault",
+      "Test the microphone on a different channel to rule out a channel fault",
+      "Test a different microphone on the same channel to confirm whether the fault is in the microphone or the channel"
+    ],
+    "escalate": false,
+    "reasoning": "No audio from a microphone is most commonly caused by signal chain interruption — a disconnected cable, absent phantom power, or a muted/zero-gain channel — rather than internal hardware failure. These are all quick checks that can be performed without tools."
+  },
+  {
+    "fault_id": "F002",
+    "fault_name": "Low Volume",
+    "equipment": ["microphone", "mixer", "speaker", "amplifier"],
+    "primary_symptoms": ["low_volume"],
+    "secondary_symptoms": [],
+    "severity": "Medium",
+    "possible_causes": [
+      "Gain/trim on the mixer channel set too low",
+      "Master fader or channel fader set too low",
+      "Amplifier output level set too low",
+      "Microphone placed too far from the sound source",
+      "Incorrect microphone type for the application (e.g. dynamic mic in a quiet studio environment)",
+      "Speaker cable impedance mismatch reducing output"
+    ],
+    "troubleshooting_steps": [
+      "Check and increase the gain/trim on the mixer channel",
+      "Check that the channel fader and master fader are set to an appropriate level",
+      "Check the amplifier output level and increase if necessary",
+      "Move the microphone closer to the sound source",
+      "Check that the speaker cables are securely connected",
+      "Test with a different microphone to compare output levels",
+      "Check for any active attenuation pads that may be reducing the signal"
+    ],
+    "escalate": false,
+    "reasoning": "Low volume is almost always a gain-staging issue somewhere in the signal chain — gain, fader, or amplifier levels that are set too conservatively. Physical placement and cable integrity should also be verified before suspecting hardware failure."
+  },
+  {
+    "fault_id": "F003",
+    "fault_name": "Distorted Sound",
+    "equipment": ["microphone", "mixer", "speaker", "amplifier"],
+    "primary_symptoms": ["distortion"],
+    "secondary_symptoms": ["low_volume"],
+    "severity": "High",
+    "possible_causes": [
+      "Gain/trim set too high on the mixer channel, causing clipping",
+      "Input signal level exceeding the mixer's headroom",
+      "Amplifier being driven beyond its rated output power",
+      "Damaged speaker cone or voice coil",
+      "Faulty microphone capsule producing a distorted signal",
+      "Incorrect phantom power applied to a dynamic microphone"
+    ],
+    "troubleshooting_steps": [
+      "Reduce the gain/trim on the mixer channel to eliminate clipping (peak LED should not stay lit)",
+      "Check the mixer's input level meters — the signal should peak in the green/amber range, not red",
+      "Reduce the amplifier volume if the amplifier is being overdriven",
+      "Test the speaker with a known-good audio source to check for a damaged cone",
+      "Test with a different microphone to determine if the distortion is originating from the microphone",
+      "Verify that phantom power is only enabled on channels connected to condenser microphones",
+      "If distortion persists after all adjustments, the microphone or speaker may require professional inspection"
+    ],
+    "escalate": true,
+    "reasoning": "Distortion is typically caused by clipping — a signal that exceeds the headroom of a device in the chain. The most common culprit is excessive gain at the mixer input. If distortion persists after gain reduction, hardware damage (speaker cone, microphone capsule) is likely and professional inspection is recommended."
+  },
+  {
+    "fault_id": "F004",
+    "fault_name": "Hum or Buzz",
+    "equipment": ["microphone", "mixer", "speaker", "cable", "amplifier"],
+    "primary_symptoms": ["hum_buzz"],
+    "secondary_symptoms": [],
+    "severity": "Medium",
+    "possible_causes": [
+      "Ground loop caused by multiple devices on different electrical circuits",
+      "Unbalanced cables picking up electromagnetic interference",
+      "Fluorescent lighting or dimmer switches near the cables",
+      "Damaged or improperly shielded cable",
+      "Nearby power cables running parallel to audio cables",
+      "Faulty earth/ground connection on audio equipment"
+    ],
+    "troubleshooting_steps": [
+      "Power all audio equipment from the same electrical circuit or power strip to eliminate ground loops",
+      "Replace unbalanced (TS/RCA) cables with balanced (XLR/TRS) cables where possible",
+      "Move audio cables away from mains power cables, dimmer switches, and fluorescent lights",
+      "Test with a different cable to rule out a damaged cable",
+      "Use a direct injection (DI) box to convert unbalanced signals to balanced signals",
+      "Check that all equipment chassis are properly earthed/grounded",
+      "If using a laptop on stage, try disconnecting the laptop charger to see if it eliminates the hum"
+    ],
+    "escalate": false,
+    "reasoning": "A persistent hum or buzz is the classic symptom of a ground loop or electromagnetic interference (EMI). Ground loops occur when equipment connected together shares multiple ground paths at different potentials. The fix is almost always routing — same power circuit, balanced cables, and physical separation from power sources."
+  },
+  {
+    "fault_id": "F005",
+    "fault_name": "Acoustic Feedback",
+    "equipment": ["microphone", "mixer", "speaker"],
+    "primary_symptoms": ["feedback"],
+    "secondary_symptoms": ["distortion"],
+    "severity": "Critical",
+    "possible_causes": [
+      "Microphone too close to or pointing directly at a speaker",
+      "Gain/monitor level set too high",
+      "Microphone gain set above the feedback threshold for the room",
+      "Incorrect microphone polar pattern selected for the environment",
+      "No high-pass filter applied, allowing low-frequency feedback buildup",
+      "Excessive reverb or delay causing signal reinforcement"
+    ],
+    "troubleshooting_steps": [
+      "Immediately reduce the microphone gain or channel fader to stop the feedback",
+      "Reposition the microphone so it does not point toward any speaker",
+      "Reduce the overall monitor or PA level",
+      "Apply a high-pass filter (HPF) at 80–100 Hz to remove low-frequency feedback",
+      "Use a graphic equaliser to identify and cut the feedback frequency",
+      "Move the microphone closer to the sound source so that gain can be reduced while maintaining level",
+      "Select a microphone with a cardioid or supercardioid polar pattern to improve rear rejection",
+      "If using in-ear monitors, consider switching from floor monitors to reduce feedback risk"
+    ],
+    "escalate": false,
+    "reasoning": "Acoustic feedback (the loud squeal) occurs when the microphone picks up its own amplified signal from the speakers and re-amplifies it in a loop. The immediate fix is always to reduce gain. The long-term fix is gain-before-feedback optimisation: correct microphone placement, polar pattern selection, and equalization of problem frequencies."
+  },
+  {
+    "fault_id": "F006",
+    "fault_name": "One Channel Not Working",
+    "equipment": ["mixer", "cable", "speaker", "amplifier"],
+    "primary_symptoms": ["one_channel"],
+    "secondary_symptoms": ["no_sound", "low_volume"],
+    "severity": "High",
+    "possible_causes": [
+      "Faulty or disconnected cable on the affected channel",
+      "Mixer channel fader or send level set to zero",
+      "Pan control fully set to the opposite side",
+      "Channel muted or assigned to an incorrect bus",
+      "Faulty channel strip on the mixer",
+      "Amplifier channel input or output connector damaged",
+      "Damaged speaker driver on one side"
+    ],
+    "troubleshooting_steps": [
+      "Check that the cable on the affected channel is firmly connected at both ends",
+      "Test with a known-working cable on the affected channel",
+      "Check the pan control on the mixer channel — it should be centred for both channels",
+      "Verify the channel fader is raised and the channel is not muted",
+      "Check the channel's bus assignment to ensure it is routed to the correct output",
+      "Test the affected channel with a different source to determine if the fault is in the channel or the source",
+      "Swap left and right speaker cables to determine whether the fault is in the mixer/amplifier or the speaker",
+      "If the mixer channel is confirmed faulty, use an alternative channel"
+    ],
+    "escalate": true,
+    "reasoning": "A single dead channel narrows the fault to either the cable feeding that channel, the channel strip itself, or the output path from the mixer to the speaker. Systematic substitution (swap cables, swap channels, swap speakers) quickly isolates which component is at fault. A dead mixer channel strip typically requires service."
+  },
+  {
+    "fault_id": "F007",
+    "fault_name": "Crackling or Intermittent Sound",
+    "equipment": ["cable", "microphone", "mixer", "speaker"],
+    "primary_symptoms": ["crackling"],
+    "secondary_symptoms": ["no_sound", "low_volume"],
+    "severity": "High",
+    "possible_causes": [
+      "Faulty or damaged audio cable with an intermittent connection",
+      "Dirty or oxidised connector",
+      "Loose connector or worn cable at the plug",
+      "Faulty channel fader or potentiometer with dirty contacts",
+      "Loose internal soldering in a connector or device",
+      "Wireless microphone with low battery or signal dropout"
+    ],
+    "troubleshooting_steps": [
+      "Flex and wiggle the cable while listening — if the crackling changes, the cable is the fault",
+      "Replace the cable with a known-working cable to confirm",
+      "Clean connector contacts with contact cleaner spray",
+      "Check the fader and channel controls on the mixer — crackling while moving a control indicates dirty contacts",
+      "If using a wireless microphone, replace the batteries and check the receiver signal strength",
+      "Test each cable individually by substitution to isolate the faulty one",
+      "Inspect connectors for bent pins, loose sleeves, or visible damage",
+      "If a fader is confirmed as the cause, cleaning with contact cleaner or fader replacement may be required"
+    ],
+    "escalate": false,
+    "reasoning": "Crackling or intermittent audio is almost always a physical connection problem — a damaged cable, dirty connector, or worn potentiometer. The diagnostic method is systematic substitution: replace cables one at a time while listening for the crackling to disappear, then flex cables to confirm intermittency."
+  }
+]

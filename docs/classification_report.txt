@@ -1,0 +1,173 @@
+﻿
+------------------------------------------------------------
+  1. Loading dataset
+------------------------------------------------------------
+  Rows: 140
+  Columns: ['symptom_no_sound', 'symptom_low_volume', 'symptom_distortion', 'symptom_hum_buzz', 'symptom_feedback', 'symptom_one_channel', 'symptom_crackling', 'equip_microphone', 'equip_mixer', 'equip_speaker', 'equip_cable', 'equip_amplifier', 'fault_id']
+
+  Feature count : 12
+  Feature names : ['symptom_no_sound', 'symptom_low_volume', 'symptom_distortion', 'symptom_hum_buzz', 'symptom_feedback', 'symptom_one_channel', 'symptom_crackling', 'equip_microphone', 'equip_mixer', 'equip_speaker', 'equip_cable', 'equip_amplifier']
+
+  Class distribution:
+    F001: 20 sample(s)
+    F002: 20 sample(s)
+    F003: 20 sample(s)
+    F004: 20 sample(s)
+    F005: 20 sample(s)
+    F006: 20 sample(s)
+    F007: 20 sample(s)
+
+------------------------------------------------------------
+  2. Train / test split  (80 / 20, stratified)
+------------------------------------------------------------
+  Training samples : 112
+  Test samples     : 28
+
+------------------------------------------------------------
+  3. Decision Tree Classifier
+------------------------------------------------------------
+
+  Test accuracy : 1.0000  (100.0%)
+
+  Classification Report:
+              precision    recall  f1-score   support
+
+        F001       1.00      1.00      1.00         4
+        F002       1.00      1.00      1.00         4
+        F003       1.00      1.00      1.00         4
+        F004       1.00      1.00      1.00         4
+        F005       1.00      1.00      1.00         4
+        F006       1.00      1.00      1.00         4
+        F007       1.00      1.00      1.00         4
+
+    accuracy                           1.00        28
+   macro avg       1.00      1.00      1.00        28
+weighted avg       1.00      1.00      1.00        28
+
+  5-fold CV accuracy: 1.0000 +/- 0.0000
+  CV scores per fold: [np.float64(1.0), np.float64(1.0), np.float64(1.0), np.float64(1.0), np.float64(1.0)]
+
+------------------------------------------------------------
+    Decision Tree ù Feature Importance
+------------------------------------------------------------
+  Feature                             Importance
+  ----------------------------------- ----------
+  symptom_no_sound                    0.1667  ######
+  symptom_low_volume                  0.1667  ######
+  symptom_distortion                  0.1667  ######
+  symptom_feedback                    0.1667  ######
+  symptom_one_channel                 0.1667  ######
+  symptom_crackling                   0.1667  ######
+  symptom_hum_buzz                    0.0000  
+  equip_microphone                    0.0000  
+  equip_mixer                         0.0000  
+  equip_speaker                       0.0000  
+  equip_cable                         0.0000  
+  equip_amplifier                     0.0000  
+
+------------------------------------------------------------
+    Decision Tree ù Text Representation (first 40 lines)
+------------------------------------------------------------
+  |--- symptom_feedback <= 0.50
+  |   |--- symptom_crackling <= 0.50
+  |   |   |--- symptom_distortion <= 0.50
+  |   |   |   |--- symptom_one_channel <= 0.50
+  |   |   |   |   |--- symptom_no_sound <= 0.50
+  |   |   |   |   |   |--- symptom_low_volume <= 0.50
+  |   |   |   |   |   |   |--- class: F004
+  |   |   |   |   |   |--- symptom_low_volume >  0.50
+  |   |   |   |   |   |   |--- class: F002
+  |   |   |   |   |--- symptom_no_sound >  0.50
+  |   |   |   |   |   |--- class: F001
+  |   |   |   |--- symptom_one_channel >  0.50
+  |   |   |   |   |--- class: F006
+  |   |   |--- symptom_distortion >  0.50
+  |   |   |   |--- class: F003
+  |   |--- symptom_crackling >  0.50
+  |   |   |--- class: F007
+  |--- symptom_feedback >  0.50
+  |   |--- class: F005
+
+------------------------------------------------------------
+  4. Random Forest Classifier (comparison)
+------------------------------------------------------------
+
+  Test accuracy : 1.0000  (100.0%)
+
+  Classification Report:
+              precision    recall  f1-score   support
+
+        F001       1.00      1.00      1.00         4
+        F002       1.00      1.00      1.00         4
+        F003       1.00      1.00      1.00         4
+        F004       1.00      1.00      1.00         4
+        F005       1.00      1.00      1.00         4
+        F006       1.00      1.00      1.00         4
+        F007       1.00      1.00      1.00         4
+
+    accuracy                           1.00        28
+   macro avg       1.00      1.00      1.00        28
+weighted avg       1.00      1.00      1.00        28
+
+  5-fold CV accuracy: 0.9857 +/- 0.0286
+  CV scores per fold: [np.float64(1.0), np.float64(1.0), np.float64(0.9286), np.float64(1.0), np.float64(1.0)]
+
+------------------------------------------------------------
+    Random Forest ù Feature Importance
+------------------------------------------------------------
+  Feature                             Importance
+  ----------------------------------- ----------
+  symptom_hum_buzz                    0.1429  #####
+  symptom_one_channel                 0.1403  #####
+  symptom_crackling                   0.1359  #####
+  symptom_feedback                    0.1345  #####
+  symptom_distortion                  0.1242  ####
+  symptom_low_volume                  0.1137  ####
+  symptom_no_sound                    0.1069  ####
+  equip_microphone                    0.0454  #
+  equip_speaker                       0.0162  
+  equip_amplifier                     0.0152  
+  equip_cable                         0.0145  
+  equip_mixer                         0.0103  
+
+------------------------------------------------------------
+  5. Model Selection
+------------------------------------------------------------
+  Decision Tree test accuracy : 1.0000  (100.0%)
+  Random Forest test accuracy : 1.0000  (100.0%)
+
+  => Saving Decision Tree (preferred for explainability).
+  Accuracy target (85%) MET: 100.0%
+
+------------------------------------------------------------
+  6. Saving model and metadata
+------------------------------------------------------------
+  Saved model  : C:\Users\Samsur\OneDrive - POLITEKNIK SANDAKAN SABAH\Desktop\KURSUS AI MDEC 01-02 OCT 2026\DAY 2 (TUGASAN)\AudioFix-AI\data\model.pkl
+  Saved metadata: C:\Users\Samsur\OneDrive - POLITEKNIK SANDAKAN SABAH\Desktop\KURSUS AI MDEC 01-02 OCT 2026\DAY 2 (TUGASAN)\AudioFix-AI\data\model_meta.json
+
+------------------------------------------------------------
+  7. Smoke test -- reload model and predict one sample per fault class
+------------------------------------------------------------
+  Model loaded successfully from C:\Users\Samsur\OneDrive - POLITEKNIK SANDAKAN SABAH\Desktop\KURSUS AI MDEC 01-02 OCT 2026\DAY 2 (TUGASAN)\AudioFix-AI\data\model.pkl
+
+  Sample fault_id   Predicted         Match?
+  ----------------  ----------------  ------
+  F001              F001              YES
+  F002              F002              YES
+  F003              F003              YES
+  F004              F004              YES
+  F005              F005              YES
+  F006              F006              YES
+  F007              F007              YES
+
+  All smoke-test samples predicted correctly.
+
+------------------------------------------------------------
+  Summary
+------------------------------------------------------------
+  Model saved     : model.pkl
+  Model type      : Decision Tree
+  Test accuracy   : 100.0%
+  Accuracy target : MET
+  Smoke test      : PASSED
+------------------------------------------------------------

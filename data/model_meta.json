@@ -1,0 +1,33 @@
+{
+  "model_type": "Decision Tree",
+  "feature_columns": [
+    "symptom_no_sound",
+    "symptom_low_volume",
+    "symptom_distortion",
+    "symptom_hum_buzz",
+    "symptom_feedback",
+    "symptom_one_channel",
+    "symptom_crackling",
+    "equip_microphone",
+    "equip_mixer",
+    "equip_speaker",
+    "equip_cable",
+    "equip_amplifier"
+  ],
+  "target_column": "fault_id",
+  "labels": [
+    "F001",
+    "F002",
+    "F003",
+    "F004",
+    "F005",
+    "F006",
+    "F007"
+  ],
+  "test_accuracy": 1.0,
+  "cv_mean_accuracy": 1.0,
+  "train_samples": 112,
+  "test_samples": 28,
+  "random_state": 42,
+  "sklearn_version": "1.9.1"
+}

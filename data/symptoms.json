@@ -1,0 +1,51 @@
+[
+  {
+    "symptom_id": "S001",
+    "label": "No sound",
+    "feature_id": "symptom_no_sound",
+    "description": "Complete absence of audio output from the equipment",
+    "common_equipment": ["microphone", "speaker", "mixer", "cable"]
+  },
+  {
+    "symptom_id": "S002",
+    "label": "Low volume",
+    "feature_id": "symptom_low_volume",
+    "description": "Audio output is present but significantly quieter than expected",
+    "common_equipment": ["microphone", "mixer", "speaker", "amplifier"]
+  },
+  {
+    "symptom_id": "S003",
+    "label": "Distorted sound",
+    "feature_id": "symptom_distortion",
+    "description": "Audio sounds harsh, clipped, or distorted — not a clean signal",
+    "common_equipment": ["microphone", "mixer", "speaker", "amplifier"]
+  },
+  {
+    "symptom_id": "S004",
+    "label": "Hum or buzz",
+    "feature_id": "symptom_hum_buzz",
+    "description": "Persistent low-frequency hum (50/60 Hz) or high-frequency buzz in the audio",
+    "common_equipment": ["microphone", "mixer", "speaker", "cable", "amplifier"]
+  },
+  {
+    "symptom_id": "S005",
+    "label": "Acoustic feedback",
+    "feature_id": "symptom_feedback",
+    "description": "A loud squeal or howl caused by the microphone picking up its own amplified signal",
+    "common_equipment": ["microphone", "mixer", "speaker"]
+  },
+  {
+    "symptom_id": "S006",
+    "label": "One channel not working",
+    "feature_id": "symptom_one_channel",
+    "description": "Audio is absent or significantly reduced on one side (left or right) only",
+    "common_equipment": ["mixer", "cable", "speaker", "amplifier"]
+  },
+  {
+    "symptom_id": "S007",
+    "label": "Crackling or intermittent sound",
+    "feature_id": "symptom_crackling",
+    "description": "Audio cuts in and out, pops, or crackles — especially when cables are moved",
+    "common_equipment": ["cable", "microphone", "mixer", "speaker"]
+  }
+]

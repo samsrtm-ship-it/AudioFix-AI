@@ -135,7 +135,7 @@ def test_pipeline_empty_input_does_not_raise():
     """Empty symptoms and equipment must not raise an exception."""
     result = build_response({"symptoms": [], "equipment": []})
     assert "fault_id" in result
-    assert result["fault_id"] in {f"F{i:03d}" for i in range(1, 8)}
+    assert result["fault_id"] in {f"F{i:03d}" for i in range(1, 9)}
 
 
 def test_pipeline_extra_context_fields_ignored():

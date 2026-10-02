@@ -86,7 +86,7 @@ def test_single_symptom_per_equipment(symptom, equipment):
     result = build_response({"symptoms": [symptom], "equipment": [equipment]})
 
     assert "fault_id" in result
-    assert result["fault_id"] in {f"F{i:03d}" for i in range(1, 8)}
+    assert result["fault_id"] in {f"F{i:03d}" for i in range(1, 9)}
     assert len(result["fault_name"]) > 0
     assert len(result["possible_causes"]) > 0
     assert len(result["troubleshooting_steps"]) > 0
@@ -153,10 +153,10 @@ class TestUIEdgeCases:
         for field in ui_fields:
             assert field in result, f"Field '{field}' missing from result"
 
-    def test_all_probabilities_has_seven_entries(self):
-        """Probability chart needs exactly 7 entries."""
+    def test_all_probabilities_has_eight_entries(self):
+        """Probability chart needs exactly 8 entries (F001–F008)."""
         result = build_response({"symptoms": ["Low volume"], "equipment": ["Speaker"]})
-        assert len(result["all_probabilities"]) == 7
+        assert len(result["all_probabilities"]) == 8
 
     def test_active_features_is_list(self):
         result = build_response({"symptoms": ["Crackling or intermittent sound"], "equipment": ["Cable"]})

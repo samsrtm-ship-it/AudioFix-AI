@@ -190,5 +190,35 @@
     ],
     "escalate": false,
     "reasoning": "Crackling or intermittent audio is almost always a physical connection problem — a damaged cable, dirty connector, or worn potentiometer. The diagnostic method is systematic substitution: replace cables one at a time while listening for the crackling to disappear, then flex cables to confirm intermittency."
+  },
+  {
+    "fault_id": "F008",
+    "fault_name": "No Audio Output – Speaker / Amplifier / Mixer",
+    "equipment": ["speaker", "amplifier", "mixer"],
+    "primary_symptoms": ["no_sound"],
+    "secondary_symptoms": [],
+    "severity": "High",
+    "possible_causes": [
+      "Speaker or amplifier not powered on, or power cable disconnected",
+      "Speaker cable disconnected or faulty",
+      "Amplifier output level set to zero or muted",
+      "Mixer master fader at zero or main output muted",
+      "Incorrect output routing on the mixer (signal sent to wrong bus)",
+      "Blown speaker driver or damaged amplifier output stage",
+      "Faulty power amplifier channel"
+    ],
+    "troubleshooting_steps": [
+      "Check that the speaker or amplifier is powered on and the power cable is connected",
+      "Verify the speaker cable is firmly connected at both the amplifier output and speaker input",
+      "Test with a known-working speaker cable to rule out a cable fault",
+      "Check the amplifier output level or gain control is not set to zero",
+      "Check the mixer master fader is raised and the main output is not muted",
+      "Verify the mixer output routing – confirm the channel is assigned to the main L/R bus",
+      "Test the speaker with a different amplifier or audio source to isolate the fault",
+      "Test the amplifier with a different speaker to determine whether the fault is in the amplifier or the speaker",
+      "If no output is detected from the amplifier at all, professional inspection may be required"
+    ],
+    "escalate": true,
+    "reasoning": "No audio from a speaker or amplifier is most commonly caused by a power, cable, or routing issue in the signal chain. Systematic substitution – swapping cables, testing with alternate sources, and checking mixer routing – will isolate whether the fault is in the speaker, the amplifier, or the mixer output stage."
   }
 ]

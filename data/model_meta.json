@@ -22,12 +22,13 @@
     "F004",
     "F005",
     "F006",
-    "F007"
+    "F007",
+    "F008"
   ],
   "test_accuracy": 1.0,
   "cv_mean_accuracy": 1.0,
-  "train_samples": 112,
-  "test_samples": 28,
+  "train_samples": 128,
+  "test_samples": 32,
   "random_state": 42,
   "sklearn_version": "1.9.1"
 }

@@ -163,7 +163,7 @@ class TestEdgeCases:
         """Empty input should not raise — engine must handle it gracefully."""
         result = _diagnose(symptoms=[], equipment=[])
         assert "fault_id" in result
-        assert result["fault_id"] in {f"F{i:03d}" for i in range(1, 8)}
+        assert result["fault_id"] in {f"F{i:03d}" for i in range(1, 9)}
 
     def test_all_symptoms_returns_valid_result(self):
         from engine.normaliser import get_symptom_labels, get_equipment_labels

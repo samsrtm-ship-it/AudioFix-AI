@@ -4,7 +4,7 @@ tests/test_retriever.py
 Unit tests for engine.retriever.get_fault() and get_all_fault_ids().
 
 Checks:
-- get_all_fault_ids() returns all 7 expected fault IDs
+- get_all_fault_ids() returns all 8 expected fault IDs
 - get_fault() returns a dict with all required fields for each fault ID
 - Required list fields are non-empty
 - Required string fields are non-empty
@@ -21,7 +21,7 @@ from engine import retriever
 # Constants
 # ---------------------------------------------------------------------------
 
-EXPECTED_FAULT_IDS = {"F001", "F002", "F003", "F004", "F005", "F006", "F007"}
+EXPECTED_FAULT_IDS = {"F001", "F002", "F003", "F004", "F005", "F006", "F007", "F008"}
 
 REQUIRED_FIELDS = {
     "fault_id":              str,
@@ -49,9 +49,9 @@ class TestGetAllFaultIds:
         ids = retriever.get_all_fault_ids()
         assert isinstance(ids, list)
 
-    def test_returns_seven_ids(self):
+    def test_returns_eight_ids(self):
         ids = retriever.get_all_fault_ids()
-        assert len(ids) == 7
+        assert len(ids) == 8
 
     def test_contains_all_expected_ids(self):
         ids = set(retriever.get_all_fault_ids())

@@ -24,7 +24,7 @@ from engine.normaliser import FEATURE_COLUMNS, build_feature_vector
 # Helpers
 # ---------------------------------------------------------------------------
 
-_KNOWN_LABELS = {"F001", "F002", "F003", "F004", "F005", "F006", "F007"}
+_KNOWN_LABELS = {"F001", "F002", "F003", "F004", "F005", "F006", "F007", "F008"}
 
 
 def _predict_for(symptoms=None, equipment=None) -> dict:
